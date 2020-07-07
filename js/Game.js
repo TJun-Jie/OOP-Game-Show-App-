@@ -46,9 +46,15 @@ if lose, display losing screen
          this.activePhrase = null;
      }
 
+     startGame() {
+         document.querySelector('.start').style.display = 'none'
+         this.getRandomPhrase();
+         this.activePhrase.addPhraseToDisplay();
+     }
+
      getRandomPhrase() {
-         const randomNumber = Math.floor(Math.random() * this.phrases.length)
-         return this.activePhrase = this.phrases[randomNumber];
+        const randomNumber = Math.floor(Math.random() * this.phrases.length)
+        this.activePhrase = this.phrases[randomNumber];
      }
 
      handleInteraction(letter) {

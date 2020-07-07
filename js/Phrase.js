@@ -29,9 +29,15 @@ select all DOM elements with the class of match letters and replace the hide cla
      addPhraseToDisplay() {
          const ul = document.querySelector('#phrase ul');
          
-         for (const letter of this.phrase) {
+         for (let i = 0 ; i < this.phrase.length ; i ++) {
             const li  = document.createElement('li');
-            li.textContent = letter;
+            if (this.phrase[i] === " ") {
+                li.classList.add('space');
+            } 
+            else {
+                li.classList.add('letter')
+            }
+            li.textContent = this.phrase[i]
             li.classList.add('hide');
             ul.appendChild(li);      
          }

@@ -22,3 +22,9 @@ const phrase3  = new Phrase('How are you');
 
 const game = new Game();
 game.phrases = [phrase1, phrase2, phrase3]
+
+
+const button =  document.querySelector('#btn__reset');
+button.addEventListener('click', () => {
+    game.startGame();
+})
