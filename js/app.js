@@ -17,12 +17,15 @@ reset all heart images
  */
 
 
+let game;
 
-const game = new Game();
 
-
+// select start game button
 const button =  document.querySelector('#btn__reset');
+
+// starts a new game when clicked
 button.addEventListener('click', () => {
+    game = new Game();
     game.startGame();
 })
 
@@ -36,12 +39,15 @@ keys.addEventListener('click', (event) => {
 
 // connecting physical keyboard to the screen keyboard
 document.addEventListener('keydown', (event) => {
-    // select all the buttons
-    const letterButtons = document.querySelectorAll('#qwerty button');
-    // if the button's text content is the same as the key, then call handleInteraction on that screen button with the same text content
-    for (let i = 0; i < letterButtons.length ; i ++) {
-        if (letterButtons[i].textContent === event.key) {
-            game.handleInteraction(letterButtons[i])
-        }
+    // prevent keyboard pressing before game starts
+    if (document.querySelector('.start').style.display ==='none') {
+        // select all the buttons
+        const letterButtons = document.querySelectorAll('#qwerty button');
+        // if the button's text content is the same as the key, then call handleInteraction on that screen button with the same text content
+        for (let i = 0; i < letterButtons.length ; i ++) {
+            if (letterButtons[i].textContent === event.key) {
+                game.handleInteraction(letterButtons[i])
+            }
+        }      
     }
 })
