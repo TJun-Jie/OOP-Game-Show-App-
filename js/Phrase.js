@@ -22,7 +22,7 @@ select all DOM elements with the class of match letters and replace the hide cla
 
  class Phrase {
      constructor(phrase) {
-         this.phrase = phrase.toLowerCase();
+         this.phrase = phrase;
          this.letters = this.removeSpaces();     
      }
 
@@ -50,7 +50,8 @@ select all DOM elements with the class of match letters and replace the hide cla
      removeSpaces() {
          //Removing spaces with regex
          const withoutSpacesPhrase = this.phrase.replace(/\s/g , '')
-         const lettersArr = withoutSpacesPhrase.split('');
+         const lowerCase = withoutSpacesPhrase.toLowerCase()
+         const lettersArr = lowerCase.split('')
          return lettersArr;
          
      }
@@ -76,7 +77,7 @@ select all DOM elements with the class of match letters and replace the hide cla
         const displayLetters  =document.querySelectorAll('#phrase li');
         for (let i = 0 ; i < displayLetters.length ; i ++) {
             // if the user guess correctly , change the class from hide to show
-            if (displayLetters[i].textContent === letter) {
+            if (displayLetters[i].textContent.toLowerCase() === letter) {
                 displayLetters[i].classList.remove('hide')
                 displayLetters[i].classList.add('show')
             }

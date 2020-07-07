@@ -16,12 +16,9 @@ reset all css class for all the letter buttons
 reset all heart images
  */
 
-const phrase1 = new Phrase('hello');
-const phrase2 = new Phrase('Dreams can be broken')
-const phrase3  = new Phrase('How are you');
+
 
 const game = new Game();
-game.phrases = [phrase1, phrase2, phrase3]
 
 
 const button =  document.querySelector('#btn__reset');

@@ -6,9 +6,15 @@
 
  class Game {
      constructor() {
-         this.missed = 0;
-         this.phrases = [];
-         this.activePhrase = null;
+        this.missed = 0;
+        this.phrases = [
+            new Phrase('There is bravery in being soft'),
+            new Phrase('You get what you give'),
+            new Phrase('Collect beautiful moments'),
+            new Phrase('Step by step Day by day'),
+            new Phrase('When nothing goes right go left')
+        ];
+        this.activePhrase = null;
      }
 
      startGame() {
@@ -120,6 +126,10 @@
         // create new phrase for user and display it 
         this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
+
+        // reset the start screen
+        document.querySelector('#overlay').classList.remove('win')
+        document.querySelector('#overlay').classList.remove('lose')
 
      }
  }
