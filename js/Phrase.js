@@ -23,14 +23,13 @@ select all DOM elements with the class of match letters and replace the hide cla
  class Phrase {
      constructor(phrase) {
          this.phrase = phrase.toLowerCase();
+         this.letters = this.removeSpaces();     
      }
 
      addPhraseToDisplay() {
-        //  split phrase into an array of letters
-         const letters = this.phrase.split('');
          const ul = document.querySelector('#phrase ul');
          
-         for (const letter of letters) {
+         for (const letter of this.phrase) {
             const li  = document.createElement('li');
             li.textContent = letter;
             li.classList.add('hide');
@@ -38,9 +37,28 @@ select all DOM elements with the class of match letters and replace the hide cla
          }
      }
 
+     removeSpaces() {
+         //Removing spaces with regex
+         const withoutSpacesPhrase = this.phrase.replace(/\s/g , '')
+         const lettersArr = withoutSpacesPhrase.split('');
+         return lettersArr;
+         
+     }
+
      checkLetter(letter) {
         //  return true if letter is in phrase
-         return (this.phrase.includes(letter) ? true : false);
+         if (this.letters.includes(letter) ) {
+             for (let i  = 0 ; i < this.letters.length ; i ++) {
+                //  i -- to remove duplicate letters
+                if(this.letters[i] === letter) {
+                    this.letters.splice(i, 1) ; i -- 
+                }
+
+             }
+             return true
+         } else {
+             return false
+         }
      }
 
      showMatchedLetter() {

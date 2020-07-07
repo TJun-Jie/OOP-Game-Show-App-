@@ -54,9 +54,9 @@ if lose, display losing screen
      handleInteraction(letter) {
         // letter.disabled = true;
         if (this.activePhrase.checkLetter(letter)) {
-            console.log('right!')
+            return console.log('right!')
         } else {
-            console.log('wrong!!')
+            return console.log('wrong!!')
         }
      }
 
@@ -67,7 +67,20 @@ if lose, display losing screen
          }
      }
 
+     checkForWin() {
+        if (this.activePhrase.letters.length === 0) {
+            return true
+        } else {
+            return false
+        }
+     }
+
      gameOver() {
-         
+        if (this.checkForWin()) {
+            console.log('win')
+        } 
+        else {
+            console.log('lose')
+        }
      }
  }
