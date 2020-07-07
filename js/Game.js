@@ -60,8 +60,12 @@ if lose, display losing screen
      handleInteraction(letter) {
         // letter.disabled = true;
         if (this.activePhrase.checkLetter(letter)) {
+            this.activePhrase.showMatchedLetter(letter)
+            this.checkForWin()
             return console.log('right!')
         } else {
+            this.checkForWin()
+            this.removeLife();
             return console.log('wrong!!')
         }
      }

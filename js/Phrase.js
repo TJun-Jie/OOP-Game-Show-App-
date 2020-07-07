@@ -67,12 +67,14 @@ select all DOM elements with the class of match letters and replace the hide cla
          }
      }
 
-     showMatchedLetter() {
+     showMatchedLetter(letter) {
         // select all DOM elements with the class of match letters and replace the hide class with the show class for each elements
-        const matchedLetters = document.querySelectorAll('match');
-        for (let i = 0 ; i < matchedLetters.length; i ++) {
-            matchedLetters[i].classList.remove('hide');
-            matchedLetters[i].classList.add('show');
+        const displayLetters  =document.querySelectorAll('#phrase li');
+        for (let i = 0 ; i < displayLetters.length ; i ++) {
+            if (displayLetters[i].textContent === letter) {
+                displayLetters[i].classList.remove('hide')
+                displayLetters[i].classList.add('show')
+            }
         }
      }
 

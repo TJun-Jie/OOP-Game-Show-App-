@@ -28,3 +28,9 @@ const button =  document.querySelector('#btn__reset');
 button.addEventListener('click', () => {
     game.startGame();
 })
+
+const keys = document.querySelector('#qwerty');
+keys.addEventListener('click', (event) => {
+    // handleInteraction(event);
+    game.handleInteraction(event.target.textContent)
+})
