@@ -32,5 +32,7 @@ button.addEventListener('click', () => {
 const keys = document.querySelector('#qwerty');
 keys.addEventListener('click', (event) => {
     // handleInteraction(event);
-    game.handleInteraction(event.target.textContent)
+    if(event.target.tagName === "BUTTON") {
+        game.handleInteraction(event.target)
+    }
 })
