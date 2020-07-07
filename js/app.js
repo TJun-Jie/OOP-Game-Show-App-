@@ -33,3 +33,15 @@ keys.addEventListener('click', (event) => {
         game.handleInteraction(event.target)
     }
 })
+
+// connecting physical keyboard to the screen keyboard
+document.addEventListener('keydown', (event) => {
+    // select all the buttons
+    const letterButtons = document.querySelectorAll('#qwerty button');
+    // if the button's text content is the same as the key, then call handleInteraction on that screen button with the same text content
+    for (let i = 0; i < letterButtons.length ; i ++) {
+        if (letterButtons[i].textContent === event.key) {
+            game.handleInteraction(letterButtons[i])
+        }
+    }
+})

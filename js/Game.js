@@ -34,6 +34,7 @@
 
      handleInteraction(letterButton) {
         //  disable button after it is pressed
+        console.log(letterButton)
         letterButton.disabled = true;
         
         // if user clicked the right letter
