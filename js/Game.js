@@ -9,10 +9,10 @@
         this.missed = 0;
         this.phrases = [
             new Phrase('There is bravery in being soft'),
-            // new Phrase('You get what you give'),
-            // new Phrase('Collect beautiful moments'),
-            // new Phrase('Step by step Day by day'),
-            // new Phrase('When nothing goes right go left')
+            new Phrase('You get what you give'),
+            new Phrase('Collect beautiful moments'),
+            new Phrase('Step by step Day by day'),
+            new Phrase('When nothing goes right go left')
         ];
         this.activePhrase = null;
      }
