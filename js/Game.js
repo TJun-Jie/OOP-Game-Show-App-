@@ -19,17 +19,17 @@
 
      startGame() {
         //  hide the start screen to show the main screen
-        document.querySelector('.start').style.display = 'none'
+        const start = document.querySelector('.start');
+        start.style.display = 'none';
         this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
 
         // reset the start screen
-        document.querySelector('#overlay').classList.remove('win')
-        document.querySelector('#overlay').classList.remove('lose')
-
+        start.classList.remove('win')
+        start.classList.remove('lose')
+        
         
 
-        // this.resetGame()
 
          
 
