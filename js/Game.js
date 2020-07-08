@@ -98,15 +98,24 @@
     //  bring user back to the start screen with respective winning or losing screen
      gameOver() {
          const start = document.querySelector('.start');
+         const message = $('#game-over-message')
+         message.css('display', 'none')
+
+         
         if (this.checkForWin()) {
-            start.style.display = 'block';
             start.classList.add('win')  
+            start.style.display = 'block';
             this.resetGame();
+            message.text('You have won!');
+            message.slideDown('slow');
+
         } 
         else {
             start.style.display = 'block';
             start.classList.add('lose')  
-            this.resetGame();          
+            this.resetGame();
+            message.text('You have lost!');
+            message.slideDown('slow');          
         }
      }
 
@@ -137,8 +146,6 @@
         const hearts = document.querySelectorAll('.tries')
         for (let i = 0 ; i < hearts.length; i ++) {
             hearts[i].children[0].src = 'images/liveHeart.png'
-        }
-        
-
+        }        
      }
  }
