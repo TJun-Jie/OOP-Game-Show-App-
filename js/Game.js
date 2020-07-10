@@ -94,20 +94,27 @@
          const message = $('#game-over-message')
          message.css('display', 'none')
 
-         
+        // If the user has won
         if (this.checkForWin()) {
+            // add winning class
             start.classList.add('win')  
+            // display starting screen
             start.style.display = 'block';
             this.resetGame();
             message.text('You have won!');
+            // jquery animations
             message.slideDown('slow');
 
         } 
+        // user loses the game
         else {
+            // display start screen
             start.style.display = 'block';
+            // add losing class
             start.classList.add('lose')  
             this.resetGame();
             message.text('You have lost!');
+            // jquery animations
             message.slideDown('slow');          
         }
      }
