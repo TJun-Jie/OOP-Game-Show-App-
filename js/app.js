@@ -2,23 +2,7 @@
  * Project 4 - OOP Game App
  * app.js */
 
-
- /*
-create a new instance of game class
-
-add click listner to start game button and call startGame() when clicked
-
-add click listener to all the letter buttons and call handleInteraction() method from the game object  (add to div with id of section)
-
-startGame(): 
-remove all li elements 
-reset all css class for all the letter buttons
-reset all heart images
- */
-
-
 let game;
-
 
 // select start game button
 const button =  document.querySelector('#btn__reset');

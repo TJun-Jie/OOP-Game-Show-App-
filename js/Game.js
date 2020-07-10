@@ -2,8 +2,6 @@
  * Project 4 - OOP Game App
  * Game.js */
 
-
-
  class Game {
      constructor() {
         this.missed = 0;
@@ -27,11 +25,6 @@
         // reset the start screen
         start.classList.remove('win')
         start.classList.remove('lose')
-        
-        
-
-
-         
 
      }
 
