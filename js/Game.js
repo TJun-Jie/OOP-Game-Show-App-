@@ -101,7 +101,7 @@
             // display starting screen
             start.style.display = 'block';
             this.resetGame();
-            message.text('You have won!');
+            message.text(`You have won! The phrase is ${this.activePhrase.phrase}`);
             // jquery animations
             message.slideDown('slow');
 
