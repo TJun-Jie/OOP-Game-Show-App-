@@ -91,6 +91,7 @@
     //  bring user back to the start screen with respective winning or losing screen
      gameOver() {
          const start = document.querySelector('.start');
+         console.log(start)
          const message = $('#game-over-message')
          message.css('display', 'none')
 
