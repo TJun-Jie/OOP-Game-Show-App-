@@ -2,15 +2,4 @@
  Phrase hunter game 
 
 
-
-styling changes: 
-
-changed the width of the heart picture from 30px to 35px to make it look more natural 
-
-added winnig and losing messages
-
-added jqeury
-
-winning and losing message slides down
-
-added background gradient images to the starting page winning page and losing page
+This project creates a browser-based, word guessing game: `Phrase Hunter.' Using JavaScript and Object-Oriented Programming, it selects a random, hidden phrase, which a player tries to guess, by clicking letters on an onscreen or physical keyboard.
